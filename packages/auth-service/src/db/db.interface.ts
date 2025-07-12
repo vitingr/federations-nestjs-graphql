@@ -7,9 +7,10 @@ import { DataSourceOptions } from 'typeorm';
 export const DbOptions: DataSourceOptions = {
   type: 'postgres',
   host: 'localhost',
-  username: 'user',
-  password: 'pass',
-  database: 'db',
+  port: 5436,
+  username: 'api',
+  password: 'development_pass',
+  database: 'auth-api',
   entities: [],
   synchronize: true,
 };
