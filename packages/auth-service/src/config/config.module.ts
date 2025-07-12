@@ -14,6 +14,6 @@ const configFactory = {
   imports: [],
   controllers: [],
   providers: [configFactory],
-  exports: [configFactory],
+  exports: [ConfigService],
 })
 export class ConfigModule {}

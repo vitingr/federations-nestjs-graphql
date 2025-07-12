@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { randomBytes } from 'crypto';
 import { AuthService } from '../auth/auth.service';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -13,6 +13,7 @@ export class UsersService {
   constructor(
     @InjectRepository(UserEntity) private userRepo: Repository<UserEntity>,
     private configService: ConfigService,
+    @Inject(forwardRef(() => AuthService))
     private authService: AuthService,
   ) {}
 
